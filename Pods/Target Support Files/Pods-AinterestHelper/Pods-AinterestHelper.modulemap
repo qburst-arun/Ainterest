@@ -1,0 +1,6 @@
+framework module Pods_AinterestHelper {
+  umbrella header "Pods-AinterestHelper-umbrella.h"
+
+  export *
+  module * { export * }
+}
