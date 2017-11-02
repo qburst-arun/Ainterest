@@ -9,19 +9,24 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    var items = [100, 200, 50, 80, 105, 164, 78, 200, 312, 74]
     var postCollectionDataSource:PostCollectionDataSource? = nil
     var postCollectionDelegate:PostCollectionDelegate? = nil
     @IBOutlet weak var postCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let layout = postCollectionView.collectionViewLayout as? PostsLayout {
+            layout.delegate = self
+        }
+        
         postCollectionDataSource = PostCollectionDataSource()
         postCollectionDelegate = PostCollectionDelegate()
         
-        homeCollectionView.dataSource = homeCollectionDataSource
-        homeCollectionView.delegate = homeCollectionDelegate
+        postCollectionView.dataSource = postCollectionDataSource
+        postCollectionView.delegate = postCollectionDelegate
         
-        homeCollectionView.reloadData()
+        postCollectionView.reloadData()
         // Do any additional setup after loading the view.
     }
 
@@ -41,4 +46,14 @@ class HomeViewController: UIViewController {
     }
     */
 
+}
+
+
+extension HomeViewController : PostsLayoutDelegate {
+    
+    // 1. Returns the photo height
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+        return CGFloat(items[indexPath.item])
+    }
+    
 }

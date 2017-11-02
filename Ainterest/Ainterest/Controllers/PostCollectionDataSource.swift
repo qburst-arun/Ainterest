@@ -12,7 +12,7 @@ import UIKit
 public class PostCollectionDataSource: NSObject, UICollectionViewDataSource {
 
     let reuseIdentifier = "PostCollectionCell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+    var items = [100, 200, 50, 80, 105, 164, 78, 200, 312, 74]
 
     override init() {
     }
@@ -27,13 +27,15 @@ public class PostCollectionDataSource: NSObject, UICollectionViewDataSource {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! HomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! PostCollectionViewCell
         
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
-       // cell.testLabel.text = self.items[indexPath.item]
+        cell.postImageView.image = UIImage(named: "post")
         cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         
         return cell
     }
     
 }
+
+

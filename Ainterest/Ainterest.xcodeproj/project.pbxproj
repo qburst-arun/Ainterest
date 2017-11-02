@@ -18,6 +18,7 @@
 		CED6ADF71FA9A82200D36114 /* AinterestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6ADF61FA9A82200D36114 /* AinterestTests.swift */; };
 		CED6AE021FA9A82200D36114 /* AinterestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6AE011FA9A82200D36114 /* AinterestUITests.swift */; };
 		CEF876231FAB2A2E00AEFC4E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF876221FAB2A2E00AEFC4E /* PostCollectionViewCell.swift */; };
+		CEF876251FAB2D1800AEFC4E /* PostsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF876241FAB2D1800AEFC4E /* PostsLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		CED6AE011FA9A82200D36114 /* AinterestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AinterestUITests.swift; sourceTree = "<group>"; };
 		CED6AE031FA9A82200D36114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF876221FAB2A2E00AEFC4E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEF876241FAB2D1800AEFC4E /* PostsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsLayout.swift; sourceTree = "<group>"; };
 		EA3265C1429B868EC7316066 /* Pods_Ainterest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ainterest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0701329AD9BB035A9A631D /* Pods-Ainterest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ainterest.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Ainterest/Pods-Ainterest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +110,8 @@
 				CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */,
 				CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */,
 				CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */,
-				CEC8BDBF1FAAEE6A00C5C526 /* HomeCollectionCell */,
+				CEF876241FAB2D1800AEFC4E /* PostsLayout.swift */,
+				CEC8BDBF1FAAEE6A00C5C526 /* PostCollectionCell */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,12 +130,12 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		CEC8BDBF1FAAEE6A00C5C526 /* HomeCollectionCell */ = {
+		CEC8BDBF1FAAEE6A00C5C526 /* PostCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
 				CEF876221FAB2A2E00AEFC4E /* PostCollectionViewCell.swift */,
 			);
-			path = HomeCollectionCell;
+			path = PostCollectionCell;
 			sourceTree = "<group>";
 		};
 		CED6ADD51FA9A82200D36114 = {
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEF876231FAB2A2E00AEFC4E /* PostCollectionViewCell.swift in Sources */,
+				CEF876251FAB2D1800AEFC4E /* PostsLayout.swift in Sources */,
 				CED6ADE21FA9A82200D36114 /* AppDelegate.swift in Sources */,
 				CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */,
 				CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */,
