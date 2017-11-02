@@ -31,13 +31,27 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionCell" id="2UD-fG-pS1" customClass="HomeCollectionViewCell" customModule="Ainterest" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionCell" id="2UD-fG-pS1" customClass="PostCollectionViewCell" customModule="Ainterest" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="145" height="101"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="101"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVY-MX-p6a">
+                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="101"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="xVY-MX-p6a" secondAttribute="bottom" id="GDM-Cm-0cF"/>
+                                            <constraint firstItem="xVY-MX-p6a" firstAttribute="leading" secondItem="2UD-fG-pS1" secondAttribute="leading" id="IzY-Dr-FTx"/>
+                                            <constraint firstAttribute="trailing" secondItem="xVY-MX-p6a" secondAttribute="trailing" id="PJS-G4-s84"/>
+                                            <constraint firstItem="xVY-MX-p6a" firstAttribute="top" secondItem="2UD-fG-pS1" secondAttribute="top" id="SqL-uU-9WZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="postImageView" destination="xVY-MX-p6a" id="BrW-dM-BT4"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -51,7 +65,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="homeCollectionView" destination="0hf-TX-yIa" id="H5B-Mp-kSv"/>
+                        <outlet property="postCollectionView" destination="0hf-TX-yIa" id="PbI-wA-nrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

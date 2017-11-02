@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  PostCollectionViewCell.swift
 //  Ainterest
 //
 //  Created by user on 02/11/17.
@@ -8,6 +8,7 @@
 
 import UIKit
 
-public class HomeCollectionViewCell: UICollectionViewCell {
+class PostCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var postImageView: UIImageView!
 }

@@ -10,15 +10,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var homeCollectionDataSource:HomeCollectionDataSource? = nil
-    var homeCollectionDelegate:HomeCollectionDelegate? = nil
-    @IBOutlet weak var homeCollectionView: UICollectionView!
+    var postCollectionDataSource:PostCollectionDataSource? = nil
+    var postCollectionDelegate:PostCollectionDelegate? = nil
+    @IBOutlet weak var postCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeCollectionDataSource = HomeCollectionDataSource()
-        homeCollectionDelegate = HomeCollectionDelegate()
+        postCollectionDataSource = PostCollectionDataSource()
+        postCollectionDelegate = PostCollectionDelegate()
+        
         homeCollectionView.dataSource = homeCollectionDataSource
         homeCollectionView.delegate = homeCollectionDelegate
+        
         homeCollectionView.reloadData()
         // Do any additional setup after loading the view.
     }

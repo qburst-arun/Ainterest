@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		A75943E3EA6AB161EAD745C9 /* Pods_Ainterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3265C1429B868EC7316066 /* Pods_Ainterest.framework */; };
 		CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */; };
-		CEC8BDC11FAAEE8D00C5C526 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC01FAAEE8C00C5C526 /* HomeCollectionViewCell.swift */; };
-		CEC8BDC31FAAEEB700C5C526 /* HomeCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC21FAAEEB700C5C526 /* HomeCollectionDataSource.swift */; };
-		CEC8BDC51FAAEF5E00C5C526 /* HomeCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC41FAAEF5E00C5C526 /* HomeCollectionDelegate.swift */; };
+		CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */; };
+		CEC8BDC51FAAEF5E00C5C526 /* PostCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */; };
 		CED6ADE21FA9A82200D36114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6ADE11FA9A82200D36114 /* AppDelegate.swift */; };
 		CED6ADE71FA9A82200D36114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED6ADE51FA9A82200D36114 /* Main.storyboard */; };
 		CED6ADE91FA9A82200D36114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED6ADE81FA9A82200D36114 /* Assets.xcassets */; };
 		CED6ADEC1FA9A82200D36114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED6ADEA1FA9A82200D36114 /* LaunchScreen.storyboard */; };
 		CED6ADF71FA9A82200D36114 /* AinterestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6ADF61FA9A82200D36114 /* AinterestTests.swift */; };
 		CED6AE021FA9A82200D36114 /* AinterestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6AE011FA9A82200D36114 /* AinterestUITests.swift */; };
+		CEF876231FAB2A2E00AEFC4E /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF876221FAB2A2E00AEFC4E /* PostCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +40,8 @@
 /* Begin PBXFileReference section */
 		6FB3C52C0CDDA98DD9287DBA /* Pods-Ainterest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ainterest.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Ainterest/Pods-Ainterest.release.xcconfig"; sourceTree = "<group>"; };
 		CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CEC8BDC01FAAEE8C00C5C526 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		CEC8BDC21FAAEEB700C5C526 /* HomeCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionDataSource.swift; sourceTree = "<group>"; };
-		CEC8BDC41FAAEF5E00C5C526 /* HomeCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionDelegate.swift; sourceTree = "<group>"; };
+		CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDataSource.swift; sourceTree = "<group>"; };
+		CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDelegate.swift; sourceTree = "<group>"; };
 		CED6ADDE1FA9A82200D36114 /* Ainterest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ainterest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED6ADE11FA9A82200D36114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED6ADE61FA9A82200D36114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		CED6ADFD1FA9A82200D36114 /* AinterestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AinterestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED6AE011FA9A82200D36114 /* AinterestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AinterestUITests.swift; sourceTree = "<group>"; };
 		CED6AE031FA9A82200D36114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEF876221FAB2A2E00AEFC4E /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA3265C1429B868EC7316066 /* Pods_Ainterest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ainterest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0701329AD9BB035A9A631D /* Pods-Ainterest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ainterest.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Ainterest/Pods-Ainterest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */,
-				CEC8BDC21FAAEEB700C5C526 /* HomeCollectionDataSource.swift */,
-				CEC8BDC41FAAEF5E00C5C526 /* HomeCollectionDelegate.swift */,
+				CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */,
+				CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */,
 				CEC8BDBF1FAAEE6A00C5C526 /* HomeCollectionCell */,
 			);
 			path = Controllers;
@@ -130,7 +130,7 @@
 		CEC8BDBF1FAAEE6A00C5C526 /* HomeCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				CEC8BDC01FAAEE8C00C5C526 /* HomeCollectionViewCell.swift */,
+				CEF876221FAB2A2E00AEFC4E /* PostCollectionViewCell.swift */,
 			);
 			path = HomeCollectionCell;
 			sourceTree = "<group>";
@@ -378,11 +378,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF876231FAB2A2E00AEFC4E /* PostCollectionViewCell.swift in Sources */,
 				CED6ADE21FA9A82200D36114 /* AppDelegate.swift in Sources */,
-				CEC8BDC31FAAEEB700C5C526 /* HomeCollectionDataSource.swift in Sources */,
+				CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */,
 				CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */,
-				CEC8BDC11FAAEE8D00C5C526 /* HomeCollectionViewCell.swift in Sources */,
-				CEC8BDC51FAAEF5E00C5C526 /* HomeCollectionDelegate.swift in Sources */,
+				CEC8BDC51FAAEF5E00C5C526 /* PostCollectionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

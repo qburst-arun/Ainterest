@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class HomeCollectionDelegate: NSObject, UICollectionViewDelegate {
+public class PostCollectionDelegate: NSObject, UICollectionViewDelegate {
     // MARK: - UICollectionViewDelegate protocol
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
