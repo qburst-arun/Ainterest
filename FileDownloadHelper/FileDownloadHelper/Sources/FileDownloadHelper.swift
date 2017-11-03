@@ -18,8 +18,8 @@ public class FileDownloadHelper: NSObject, DownloadCompleted {
 //        self.fileDownloadController = fileDownloadController
 //    }
     
-    public func startDownload(FromURL url:URL, ofType fileType:SupportedFormats, withProgress progress:@escaping ProgressClosure) {
-        DownloadTaskController().download(FromURL: url, withProgress:progress)
+    public func startDownload(FromURL url:URL, ofType fileType:SupportedFileFormats, withProgress progress:@escaping ProgressClosure) {
+        DownloadTaskController().startDownload(FromURL: url, withProgress:progress)
     }
     
     public func cancelDownload(FromURL url:String) {

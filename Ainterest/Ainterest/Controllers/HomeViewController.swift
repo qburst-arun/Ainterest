@@ -57,6 +57,7 @@ class HomeViewController: UIViewController {
         let url = URL.init(string: "http://www.otc.umd.edu/sites/default/files/documents/sample-license.pdf")
         
         FileDownloadHelper.sharedInstance.startDownload(FromURL: url!, ofType:.image, withProgress:progress )
+        
     }
 
 }

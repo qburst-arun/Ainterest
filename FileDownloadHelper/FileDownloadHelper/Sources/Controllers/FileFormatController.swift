@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum SupportedFormats:String {
+public enum SupportedFileFormats:String {
     case image    = "Image"
     case pdf      = "PDF"
 }

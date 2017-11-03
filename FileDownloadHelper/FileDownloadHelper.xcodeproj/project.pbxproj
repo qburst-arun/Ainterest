@@ -13,6 +13,10 @@
 		CE19020B1FAC2CB100B64F73 /* FileDownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19020A1FAC2CB100B64F73 /* FileDownloadHelper.swift */; };
 		CE19020D1FAC369600B64F73 /* FileFormatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1902061FAC2C5B00B64F73 /* FileFormatController.swift */; };
 		CE19020F1FAC41BA00B64F73 /* DownloadTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19020E1FAC41BA00B64F73 /* DownloadTaskController.swift */; };
+		CEC0001F1FAC7A5F005F7136 /* CacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0001E1FAC7A5F005F7136 /* CacheController.swift */; };
+		CEC000211FAC7C43005F7136 /* CacheServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000201FAC7C43005F7136 /* CacheServices.swift */; };
+		CEC000231FAC804D005F7136 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000221FAC804D005F7136 /* Cache.swift */; };
+		CEC000251FAC87E5005F7136 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000241FAC87E5005F7136 /* DownloadService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,10 @@
 		CE1902061FAC2C5B00B64F73 /* FileFormatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFormatController.swift; sourceTree = "<group>"; };
 		CE19020A1FAC2CB100B64F73 /* FileDownloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHelper.swift; sourceTree = "<group>"; };
 		CE19020E1FAC41BA00B64F73 /* DownloadTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTaskController.swift; sourceTree = "<group>"; };
+		CEC0001E1FAC7A5F005F7136 /* CacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheController.swift; sourceTree = "<group>"; };
+		CEC000201FAC7C43005F7136 /* CacheServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheServices.swift; sourceTree = "<group>"; };
+		CEC000221FAC804D005F7136 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		CEC000241FAC87E5005F7136 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 			children = (
 				CE1902061FAC2C5B00B64F73 /* FileFormatController.swift */,
 				CE19020E1FAC41BA00B64F73 /* DownloadTaskController.swift */,
+				CEC0001E1FAC7A5F005F7136 /* CacheController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -132,6 +141,7 @@
 		CE1902071FAC2C5B00B64F73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEC000221FAC804D005F7136 /* Cache.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -139,6 +149,8 @@
 		CE1902081FAC2C5B00B64F73 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CEC000201FAC7C43005F7136 /* CacheServices.swift */,
+				CEC000241FAC87E5005F7136 /* DownloadService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -262,8 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC000211FAC7C43005F7136 /* CacheServices.swift in Sources */,
+				CEC000251FAC87E5005F7136 /* DownloadService.swift in Sources */,
+				CEC0001F1FAC7A5F005F7136 /* CacheController.swift in Sources */,
 				CE19020D1FAC369600B64F73 /* FileFormatController.swift in Sources */,
 				CE19020B1FAC2CB100B64F73 /* FileDownloadHelper.swift in Sources */,
+				CEC000231FAC804D005F7136 /* Cache.swift in Sources */,
 				CE19020F1FAC41BA00B64F73 /* DownloadTaskController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
