@@ -8,11 +8,16 @@
 
 import Foundation
 
-public protocol DownloadCompleted {
-    func fileDownloaded() -> String
+public enum SupportedFormats:String {
+    case image    = "Image"
+    case pdf      = "PDF"
 }
 
-class Image: DownloadCompleted {
+public protocol DownloadCompleted {
+    func fileDownloaded() -> AnyObject
+}
+
+public class Image: DownloadCompleted {
     let name: String
     let color: String
     
@@ -21,19 +26,19 @@ class Image: DownloadCompleted {
         self.color = color
     }
     
-    func fileDownloaded() -> String {
-        return "I'm \(name) and my color is \(color)"
+   public func fileDownloaded() -> AnyObject {
+        return "I'm \(name) and my color is \(color)" as AnyObject
     }
 }
 
-class PDF: DownloadCompleted {
+public class PDF: DownloadCompleted {
     let type: String
     
     init(type: String) {
         self.type = type
     }
     
-    func fileDownloaded() -> String {
-        return "I'm a \(type)"
+   public func fileDownloaded() -> AnyObject {
+        return "I'm a \(type)" as AnyObject
     }
 }

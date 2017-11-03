@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AinterestHelper
+import FileDownloadHelper
 
 class HomeViewController: UIViewController {
     var itemsHieght = [100, 200, 520, 80, 105, 164, 78, 200, 312, 74]
@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var postCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        test()
         if let layout = postCollectionView.collectionViewLayout as? PostsLayout {
             layout.delegate = self
         }
@@ -47,6 +47,17 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func test(){
+        let progress = {(progress:Float) -> (Void) in
+            NSLog("progress:- \(progress)");
+        }
+//        let url = URL.init(string: "https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=4b142941bfd18159e2e4d166abcd0705")
+        
+        let url = URL.init(string: "http://www.otc.umd.edu/sites/default/files/documents/sample-license.pdf")
+        
+        FileDownloadHelper.sharedInstance.startDownload(FromURL: url!, ofType:.image, withProgress:progress )
+    }
 
 }
 

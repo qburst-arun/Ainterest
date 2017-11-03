@@ -11,6 +11,8 @@
 		CE1901F51FAC27D900B64F73 /* FileDownloadHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1901F41FAC27D900B64F73 /* FileDownloadHelperTests.swift */; };
 		CE1901F71FAC27D900B64F73 /* FileDownloadHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1901E91FAC27D900B64F73 /* FileDownloadHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE19020B1FAC2CB100B64F73 /* FileDownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19020A1FAC2CB100B64F73 /* FileDownloadHelper.swift */; };
+		CE19020D1FAC369600B64F73 /* FileFormatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1902061FAC2C5B00B64F73 /* FileFormatController.swift */; };
+		CE19020F1FAC41BA00B64F73 /* DownloadTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19020E1FAC41BA00B64F73 /* DownloadTaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +32,9 @@
 		CE1901EF1FAC27D900B64F73 /* FileDownloadHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileDownloadHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1901F41FAC27D900B64F73 /* FileDownloadHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHelperTests.swift; sourceTree = "<group>"; };
 		CE1901F61FAC27D900B64F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE1902051FAC2C5B00B64F73 /* FileDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadController.swift; sourceTree = "<group>"; };
 		CE1902061FAC2C5B00B64F73 /* FileFormatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFormatController.swift; sourceTree = "<group>"; };
 		CE19020A1FAC2CB100B64F73 /* FileDownloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHelper.swift; sourceTree = "<group>"; };
+		CE19020E1FAC41BA00B64F73 /* DownloadTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +123,8 @@
 		CE1902041FAC2C5B00B64F73 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE1902051FAC2C5B00B64F73 /* FileDownloadController.swift */,
 				CE1902061FAC2C5B00B64F73 /* FileFormatController.swift */,
+				CE19020E1FAC41BA00B64F73 /* DownloadTaskController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE19020D1FAC369600B64F73 /* FileFormatController.swift in Sources */,
 				CE19020B1FAC2CB100B64F73 /* FileDownloadHelper.swift in Sources */,
+				CE19020F1FAC41BA00B64F73 /* DownloadTaskController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,12 +412,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FileDownloadHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arun.ainterest.FileDownloadHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -430,11 +435,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FileDownloadHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arun.ainterest.FileDownloadHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

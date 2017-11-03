@@ -7,24 +7,26 @@
 //
 
 import Foundation
-import Foundation
-
-public class FileDownloadHelper: NSObject {
+public typealias ProgressClosure = (Float) -> ()
+public class FileDownloadHelper: NSObject, DownloadCompleted {
     
     private override init() {    }
     // MARK: - Shared Instance
-    static let sharedInstance = FileDownloadHelper()
+    public static let sharedInstance = FileDownloadHelper()
     
-    let fileDownloadController: FileDownloadController
-    //    let configureAinterestHelper: ConfigureAinterestHelper
+//    init(fileDownloadController: FileDownloadController) {
+//        self.fileDownloadController = fileDownloadController
+//    }
     
-    init(fileDownloadController: FileDownloadController) {
-        self.fileDownloadController = fileDownloadController
+    public func startDownload(FromURL url:URL, ofType fileType:SupportedFormats, withProgress progress:@escaping ProgressClosure) {
+        DownloadTaskController().download(FromURL: url, withProgress:progress)
     }
     
-    func handle() {
-        let data = apiHandler.requestDataToAPI()
-        let array = parseHandler.parse(data: data)
-        dbHandler.saveToDB(array: array)
+    public func cancelDownload(FromURL url:String) {
+    }
+    
+    public func fileDownloaded() -> AnyObject {
+//        fileFormat.fileDownloaded()
+        return "asd" as AnyObject
     }
 }
