@@ -10,18 +10,21 @@ import Foundation
 
 public class CacheController: NSObject {
     
-    public func clearCache() -> Bool {
+    public func clearAllCache() {
     
-        return true
     }
     
-    public func addToCache(withKey key:String, withValue value:AnyObject) -> Bool {
-        
-        return true
+    public func addFileToCache(withKey key:String, withValue value:DefaultDownloadResponse) {
+        CacheServices.sharedInstance.insertToCache(withKey: key, withValue: value)
     }
     
-    public func checkKeyExistInCache(withKey key:String) -> CacheValueModel {
+    public func checkUrlExistInCache(withKey key:String) -> DefaultDownloadResponse? {
         
-        return CacheValueModel(withUrl: nil,withData: nil,withTotalCalls: nil,withContentType:nil)
+        return CacheServices.sharedInstance.retriveContentFromCache(withKey:key)
+    }
+    
+    
+    public func removeFileFromCache(withKey key:String, withValue value:DefaultDownloadResponse) {
+        CacheServices.sharedInstance.deleteContent(withKey: key)
     }
 }

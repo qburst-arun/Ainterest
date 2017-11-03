@@ -8,11 +8,13 @@
 
 import Foundation
 
-public class DownloadService: NSObject, URLSessionDownloadDelegate, URLSessionDelegate, URLSessionTaskDelegate{
+public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessionDelegate, URLSessionTaskDelegate{
     
     var progressClosure:ProgressClosure?
-    public func download(FromURL url:URL, withProgress progress:@escaping ProgressClosure) {
+    var completionClosure:((Data) -> ())?
+    public func download(FromURL url:URL, withProgress progress:@escaping ProgressClosure, withCompleteion completion:@escaping (Data) -> ()) {
         progressClosure = progress
+        completionClosure = completion
         let config = URLSessionConfiguration.background(withIdentifier: "com.arunjose")
         let session = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
         let task = session.downloadTask(with: url)
@@ -27,6 +29,9 @@ public class DownloadService: NSObject, URLSessionDownloadDelegate, URLSessionDe
     }
     
     public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        
+//        let fileData:Data? = FileManager.default.contents(atPath: String(describing: location))
+        if let fileData:NSData = NSData(contentsOf: location) {
+            completionClosure!(fileData as Data)
+        }
     }
 }

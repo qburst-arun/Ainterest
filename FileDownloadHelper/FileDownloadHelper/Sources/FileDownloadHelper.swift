@@ -8,7 +8,8 @@
 
 import Foundation
 public typealias ProgressClosure = (Float) -> ()
-public class FileDownloadHelper: NSObject, DownloadCompleted {
+public typealias CompletionClosure = (DefaultDownloadResponse) -> ()
+public class FileDownloadHelper: NSObject {
     
     private override init() {    }
     // MARK: - Shared Instance
@@ -18,8 +19,8 @@ public class FileDownloadHelper: NSObject, DownloadCompleted {
 //        self.fileDownloadController = fileDownloadController
 //    }
     
-    public func startDownload(FromURL url:URL, ofType fileType:SupportedFileFormats, withProgress progress:@escaping ProgressClosure) {
-        DownloadTaskController().startDownload(FromURL: url, withProgress:progress)
+    public func startDownload(FromURL url:URL, withProgress progress:@escaping ProgressClosure, withCompleteion completion:@escaping CompletionClosure) {
+        DownloadTaskController().startDownload(FromURL: url, withProgress:progress, withCompleteion: completion)
     }
     
     public func cancelDownload(FromURL url:String) {
