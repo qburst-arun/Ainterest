@@ -14,17 +14,17 @@ public class CacheController: NSObject {
     
     }
     
-    public func addFileToCache(withKey key:String, withValue value:DefaultDownloadResponse) {
+    public func addFileToCache(withKey key:URL, withValue value:DefaultDownloadResponse) {
         CacheServices.sharedInstance.insertToCache(withKey: key, withValue: value)
     }
     
-    public func checkUrlExistInCache(withKey key:String) -> DefaultDownloadResponse? {
+    public func checkUrlExistInCache(withKey key:URL) -> DefaultDownloadResponse? {
         
         return CacheServices.sharedInstance.retriveContentFromCache(withKey:key)
     }
     
     
-    public func removeFileFromCache(withKey key:String, withValue value:DefaultDownloadResponse) {
+    public func removeFileFromCache(withKey key:URL) {
         CacheServices.sharedInstance.deleteContent(withKey: key)
     }
 }

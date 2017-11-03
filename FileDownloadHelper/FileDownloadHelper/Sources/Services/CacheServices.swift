@@ -17,17 +17,17 @@ class CacheServices: NSObject {
     public func configureCacheSize(maxlimitOfObjects:Int) {
         cache.countLimit = maxlimitOfObjects
     }
-    public func deleteContent(withKey key:String) {
+    public func deleteContent(withKey key:URL) {
         cache.removeObject(forKey: key as AnyObject)
     }
     
-    public func insertToCache(withKey key:String, withValue value:DefaultDownloadResponse) {
+    public func insertToCache(withKey key:URL, withValue value:DefaultDownloadResponse) {
         cache.setObject(value, forKey: key as AnyObject)
     }
     
-    public func retriveContentFromCache(withKey key:String) -> DefaultDownloadResponse? {
+    public func retriveContentFromCache(withKey key:URL) -> DefaultDownloadResponse? {
         
-        if let value:DefaultDownloadResponse = cache.object(forKey: key as AnyObject){
+        if let value:DefaultDownloadResponse = cache.object(forKey: key as AnyObject ){
             return value
         }else{
             return nil

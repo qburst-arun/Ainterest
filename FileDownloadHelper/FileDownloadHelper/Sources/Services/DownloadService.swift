@@ -10,15 +10,17 @@ import Foundation
 
 public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessionDelegate, URLSessionTaskDelegate{
     
+    static var config:URLSessionConfiguration?
+    static var session:URLSession?
     var progressClosure:ProgressClosure?
     var completionClosure:((Data) -> ())?
     public func download(FromURL url:URL, withProgress progress:@escaping ProgressClosure, withCompleteion completion:@escaping (Data) -> ()) {
         progressClosure = progress
         completionClosure = completion
-        let config = URLSessionConfiguration.background(withIdentifier: "com.arunjose")
-        let session = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
-        let task = session.downloadTask(with: url)
-        task.resume()
+        DownloadService.config = URLSessionConfiguration.background(withIdentifier: "com.arunjose")
+        DownloadService.session = URLSession(configuration: DownloadService.config!, delegate: self, delegateQueue: OperationQueue.main)
+        let task = DownloadService.session?.downloadTask(with: url)
+        task?.resume()
     }
     
     public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,
@@ -34,4 +36,18 @@ public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessio
             completionClosure!(fileData as Data)
         }
     }
+    
+    
+    public func cancelDownload(FromURL url:URL) {
+        
+//        if  DownloadService.session != nil{
+//            DownloadService.session?.getTasksWithCompletionHandler(( dataTask:[URLSessionDataTask],
+//                dataTask1:[URLSessionUploadTask],
+//                dataTask2:[URLSessionDownloadTask]) -> Void) {
+//            }
+//        }else{
+//            
+//        }
+    }
+
 }
