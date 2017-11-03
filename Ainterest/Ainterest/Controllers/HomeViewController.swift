@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import AinterestHelper
 
 class HomeViewController: UIViewController {
-    var items = [100, 200, 50, 80, 105, 164, 78, 200, 312, 74]
+    var itemsHieght = [100, 200, 520, 80, 105, 164, 78, 200, 312, 74]
+    var itemsWidth = [100, 400, 350, 40, 125, 100, 100, 150, 400, 50]
     var postCollectionDataSource:PostCollectionDataSource? = nil
     var postCollectionDelegate:PostCollectionDelegate? = nil
     @IBOutlet weak var postCollectionView: UICollectionView!
@@ -52,8 +54,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController : PostsLayoutDelegate {
     
     // 1. Returns the photo height
-    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
-        return CGFloat(items[indexPath.item])
+    func collectionView(_ collectionView: UICollectionView, sizeForPhotoAtIndexPath indexPath:IndexPath) -> CGSize {
+        return  CGSize(width: itemsWidth[indexPath.item], height: itemsHieght[indexPath.item])
     }
     
 }

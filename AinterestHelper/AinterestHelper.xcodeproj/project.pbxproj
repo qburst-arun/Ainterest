@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7F15AAED12BA55DFC4CF26D2 /* Pods_AinterestHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 695B332F5997B7FD39FF3220 /* Pods_AinterestHelper.framework */; };
+		CE1901D71FAC189F00B64F73 /* AinterestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1901D61FAC189F00B64F73 /* AinterestHelper.swift */; };
+		CE1901D91FAC1E9500B64F73 /* FileDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1901D81FAC1E9500B64F73 /* FileDownloadController.swift */; };
+		CE1901DB1FAC204B00B64F73 /* FileFormatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1901DA1FAC204B00B64F73 /* FileFormatController.swift */; };
 		CED6AE231FA9A87A00D36114 /* AinterestHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED6AE191FA9A87A00D36114 /* AinterestHelper.framework */; };
 		CED6AE281FA9A87A00D36114 /* AinterestHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6AE271FA9A87A00D36114 /* AinterestHelperTests.swift */; };
 		CED6AE2A1FA9A87A00D36114 /* AinterestHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CED6AE1C1FA9A87A00D36114 /* AinterestHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +30,9 @@
 		695B332F5997B7FD39FF3220 /* Pods_AinterestHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AinterestHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FEBBE0A260F1D7CBA54B76 /* Pods-AinterestHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AinterestHelper.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-AinterestHelper/Pods-AinterestHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		7C499481D0E2E5B2DA82D2A3 /* Pods-AinterestHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AinterestHelper.release.xcconfig"; path = "../Pods/Target Support Files/Pods-AinterestHelper/Pods-AinterestHelper.release.xcconfig"; sourceTree = "<group>"; };
+		CE1901D61FAC189F00B64F73 /* AinterestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AinterestHelper.swift; sourceTree = "<group>"; };
+		CE1901D81FAC1E9500B64F73 /* FileDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadController.swift; sourceTree = "<group>"; };
+		CE1901DA1FAC204B00B64F73 /* FileFormatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFormatController.swift; sourceTree = "<group>"; };
 		CED6AE191FA9A87A00D36114 /* AinterestHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AinterestHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED6AE1C1FA9A87A00D36114 /* AinterestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AinterestHelper.h; sourceTree = "<group>"; };
 		CED6AE1D1FA9A87A00D36114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +78,63 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE1901CF1FAC17C300B64F73 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CE1901D61FAC189F00B64F73 /* AinterestHelper.swift */,
+				CE1901D51FAC184900B64F73 /* Controllers */,
+				CE1901D41FAC184300B64F73 /* Services */,
+				CE1901D31FAC183C00B64F73 /* Models */,
+				CE1901D21FAC183800B64F73 /* Supporting Files */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CE1901D01FAC17CC00B64F73 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		CE1901D11FAC17DF00B64F73 /* Deployment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Deployment;
+			sourceTree = "<group>";
+		};
+		CE1901D21FAC183800B64F73 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CED6AE1C1FA9A87A00D36114 /* AinterestHelper.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE1901D31FAC183C00B64F73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE1901D41FAC184300B64F73 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE1901D51FAC184900B64F73 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1901D81FAC1E9500B64F73 /* FileDownloadController.swift */,
+				CE1901DA1FAC204B00B64F73 /* FileFormatController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		CED6AE0F1FA9A87A00D36114 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +158,9 @@
 		CED6AE1B1FA9A87A00D36114 /* AinterestHelper */ = {
 			isa = PBXGroup;
 			children = (
-				CED6AE1C1FA9A87A00D36114 /* AinterestHelper.h */,
+				CE1901CF1FAC17C300B64F73 /* Sources */,
+				CE1901D01FAC17CC00B64F73 /* Documentation */,
+				CE1901D11FAC17DF00B64F73 /* Deployment */,
 				CED6AE1D1FA9A87A00D36114 /* Info.plist */,
 			);
 			path = AinterestHelper;
@@ -174,6 +239,7 @@
 				TargetAttributes = {
 					CED6AE181FA9A87A00D36114 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					CED6AE211FA9A87A00D36114 = {
@@ -258,6 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1901D71FAC189F00B64F73 /* AinterestHelper.swift in Sources */,
+				CE1901DB1FAC204B00B64F73 /* FileFormatController.swift in Sources */,
+				CE1901D91FAC1E9500B64F73 /* FileDownloadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69FEBBE0A260F1D7CBA54B76 /* Pods-AinterestHelper.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -412,6 +482,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arun.ainterest.AinterestHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -421,6 +492,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C499481D0E2E5B2DA82D2A3 /* Pods-AinterestHelper.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -442,6 +514,7 @@
 		CED6AE311FA9A87A00D36114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AinterestHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -455,6 +528,7 @@
 		CED6AE321FA9A87A00D36114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AinterestHelperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
