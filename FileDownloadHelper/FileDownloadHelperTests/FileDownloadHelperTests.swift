@@ -1,15 +1,15 @@
 //
-//  AinterestHelperTests.swift
-//  AinterestHelperTests
+//  FileDownloadHelperTests.swift
+//  FileDownloadHelperTests
 //
-//  Created by user on 01/11/17.
+//  Created by user on 03/11/17.
 //  Copyright © 2017 Arun's Technologies. All rights reserved.
 //
 
 import XCTest
-@testable import AinterestHelper
+@testable import FileDownloadHelper
 
-class AinterestHelperTests: XCTestCase {
+class FileDownloadHelperTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:AinterestHelper/AinterestHelper.xcodeproj">
+      location = "group:FileDownloadHelper/FileDownloadHelper.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Ainterest/Ainterest.xcodeproj">
