@@ -40,13 +40,11 @@ public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessio
     }
     
     
-    public func cancelDownload(FromURL url:URL) {
+    public func cancelDownload(WithURL url:URL) {
         
         if  DownloadService.session != nil{
             DownloadService.session?.getTasksWithCompletionHandler { (tasks, uploads, downloads) in
-                let bytesReceived = downloads.map{ $0.countOfBytesReceived }.reduce(0, +)
-                let bytesExpectedToReceive = downloads.map{ $0.countOfBytesExpectedToReceive }.reduce(0, +)
-                let progress = bytesExpectedToReceive > 0 ? Float(bytesReceived) / Float(bytesExpectedToReceive) : 0.0
+                
                 for task in downloads {
                     if task.originalRequest?.url == url{
                         task.cancel()

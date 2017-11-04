@@ -12,7 +12,7 @@ public class DefaultDownloadResponse: NSObject {
     public var data:Data?
     public var error:Error?
     
-    init(withRequestUrl requestUrl:URL?, withData data:Data?, withError error:Error?) {
+    init(requestUrl:URL?, data:Data?, error:Error?) {
         self.requestUrl = requestUrl
         self.data = data
         self.error = error

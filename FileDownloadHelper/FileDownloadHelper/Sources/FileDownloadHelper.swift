@@ -29,8 +29,8 @@ public class FileDownloadHelper: NSObject {
         DownloadTaskController().startDownload(FromURL: url!, withTaskId:taskId, withProgress:progress!, withCompleteion: completion!)
     }
     
-    public func cancelDownload() {
-//        DownloadTaskController().cancelDownload(FromURL: url!, withTaskId:taskId)
+    public func cancelDownload(){
+       return DownloadTaskController().cancelDownload(WithURL: url!, TaskId:taskId)
     }
     
     

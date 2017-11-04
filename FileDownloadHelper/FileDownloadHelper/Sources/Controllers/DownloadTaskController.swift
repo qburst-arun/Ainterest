@@ -16,7 +16,7 @@ public class DownloadTaskController: NSObject{
         
         if let requestDetail:RequestDetail = CacheController().checkUrlExistInCache(withKey:url){
             if requestDetail.data != nil {
-                let defaultResponse:DefaultDownloadResponse = DefaultDownloadResponse(withRequestUrl: requestDetail.requestUrl, withData: requestDetail.data, withError: nil)
+                let defaultResponse:DefaultDownloadResponse = DefaultDownloadResponse(requestUrl: requestDetail.requestUrl, data: requestDetail.data, error: nil)
                 progress(1)
                 completion(defaultResponse)
             }else{
@@ -34,7 +34,7 @@ public class DownloadTaskController: NSObject{
             }, withCompleteion:{fileData in
                 let requestDetail:RequestDetail = CacheController().checkUrlExistInCache(withKey:url)!
                 requestDetail.data = fileData
-                let defaultResponse:DefaultDownloadResponse = DefaultDownloadResponse(withRequestUrl: requestDetail.requestUrl, withData: requestDetail.data, withError: nil)
+                let defaultResponse:DefaultDownloadResponse = DefaultDownloadResponse(requestUrl: requestDetail.requestUrl, data: requestDetail.data, error: nil)
                 for handler in requestDetail.responseHandler!{
                     handler.completion!(defaultResponse)
                 }
@@ -48,19 +48,40 @@ public class DownloadTaskController: NSObject{
             CacheController().addFileToCache(withKey: url, withValue: requestDetail)        }
     }
     
-    //    public func cancelDownload(FromURL url:URL, withTaskId taskId:Int) {
-    //
-    //        if let downloadResponse:DefaultDownloadResponse = CacheController().checkUrlExistInCache(withKey:url){
-    //            if downloadResponse.totalCachedCalls == 1{
-    //                CacheController().removeFileFromCache(withKey: url)
-    //            }else{
-    //                downloadResponse.totalCachedCalls = downloadResponse.totalCachedCalls! - 1
-    //                CacheController().addFileToCache(withKey: url, withValue: downloadResponse)
-    //            }
-    //        }else{
-    //
-    //        }
-    //    }
+        public func cancelDownload(WithURL url:URL, TaskId taskId:Int) {
+    
+            if let requestDetail:RequestDetail = CacheController().checkUrlExistInCache(withKey:url){
+                if requestDetail.data == nil{
+                    let userInfo: [AnyHashable : Any] =
+                        [
+                            NSLocalizedDescriptionKey :  NSLocalizedString("Unauthorized", value: "Please activate your account", comment: "") ,
+                            NSLocalizedFailureReasonErrorKey : NSLocalizedString("Unauthorized", value: "Account not activated", comment: "")
+                    ]
+                    let err = NSError(domain: "ShiploopHttpResponseErrorDomain", code: 401, userInfo: userInfo)
+                    let defaultResponse = DefaultDownloadResponse(requestUrl: url, data: nil, error:err)
+                    if requestDetail.responseHandler?.count == 1{
+                        DownloadService().cancelDownload(WithURL: url)
+                        requestDetail.responseHandler![0].progress!(1)
+                        requestDetail.responseHandler![0].completion!(defaultResponse)
+                        CacheController().removeFileFromCache(withKey:url)
+                    }else{
+                        for responseHandler in requestDetail.responseHandler!{
+                            if responseHandler.downloadHelperTaskID == taskId{
+                                requestDetail.responseHandler![0].progress!(1)
+                                requestDetail.responseHandler![0].completion!(defaultResponse)
+                                let index = requestDetail.responseHandler?.index(of: responseHandler)
+                                requestDetail.responseHandler?.remove(at: index!)
+                                
+                            }
+                        }
+                        
+                    }
+                    
+                }else{
+                }
+            }else{
+            }
+        }
     
 }
 

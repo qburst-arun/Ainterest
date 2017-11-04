@@ -51,18 +51,27 @@ class HomeViewController: UIViewController {
     @IBAction func testDownload(_ sender: Any) {
         
         let progress = {(progress:Float) -> (Void) in
-            NSLog("progress:- \(progress)");
+           // NSLog("progress:- \(progress)");
         }
         let completion = {(success:DefaultDownloadResponse) -> (Void) in
+            if success.error == nil{
             NSLog("success:- \(success)");
             let image = UIImage(data:success.data!,scale:1.0)
-            NSLog("success:- \(success)");
+            
+            }else{
+                NSLog("Failure:- \(success)");            }
         }
         let url = URL.init(string: "https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=4b142941bfd18159e2e4d166abcd0705")
         
         //        let url = URL.init(string: "http://www.otc.umd.edu/sites/default/files/documents/sample-license.pdf")
         let downloadTask = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
         downloadTask.startDownload()
+        
+        let downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
+        downloadTask1.startDownload()
+        
+        downloadTask.cancelDownload()
+        
         
     }
 //    func test(){

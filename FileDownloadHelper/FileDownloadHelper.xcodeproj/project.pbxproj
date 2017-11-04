@@ -17,6 +17,7 @@
 		CEC000251FAC87E5005F7136 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000241FAC87E5005F7136 /* DownloadService.swift */; };
 		CEC000271FAC954A005F7136 /* DefaultDownloadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000261FAC954A005F7136 /* DefaultDownloadResponse.swift */; };
 		CEC000291FAD915F005F7136 /* RequestDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000281FAD915F005F7136 /* RequestDetail.swift */; };
+		CEC0002B1FADC6F6005F7136 /* CancelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0002A1FADC6F6005F7136 /* CancelResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		CEC000241FAC87E5005F7136 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 		CEC000261FAC954A005F7136 /* DefaultDownloadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDownloadResponse.swift; sourceTree = "<group>"; };
 		CEC000281FAD915F005F7136 /* RequestDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetail.swift; sourceTree = "<group>"; };
+		CEC0002A1FADC6F6005F7136 /* CancelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				CEC000261FAC954A005F7136 /* DefaultDownloadResponse.swift */,
 				CEC000281FAD915F005F7136 /* RequestDetail.swift */,
+				CEC0002A1FADC6F6005F7136 /* CancelResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				CEC000211FAC7C43005F7136 /* CacheServices.swift in Sources */,
 				CEC000251FAC87E5005F7136 /* DownloadService.swift in Sources */,
 				CEC0001F1FAC7A5F005F7136 /* CacheController.swift in Sources */,
+				CEC0002B1FADC6F6005F7136 /* CancelResponse.swift in Sources */,
 				CEC000271FAC954A005F7136 /* DefaultDownloadResponse.swift in Sources */,
 				CE19020B1FAC2CB100B64F73 /* FileDownloadHelper.swift in Sources */,
 				CE19020F1FAC41BA00B64F73 /* DownloadTaskController.swift in Sources */,
