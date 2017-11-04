@@ -9,22 +9,23 @@
 import Foundation
 
 public class CacheController: NSObject {
+    // Shared instance
+    public static let sharedInstance = CacheController()
     
-    public func clearAllCache() {
-    
+    public func clearCache() {
+     CacheServices.sharedInstance.clearAll()
     }
     
-    public func addFileToCache(withKey key:URL, withValue value:RequestDetail) {
-        CacheServices.sharedInstance.insertToCache(withKey: key, withValue: value)
+    public func addRequestToCache(withKey key:URL, withValue value:RequestDetail) {
+        CacheServices.sharedInstance.insert(withKey: key, withValue: value)
     }
     
-    public func checkUrlExistInCache(withKey key:URL) -> RequestDetail? {
-        
-        return CacheServices.sharedInstance.retriveContentFromCache(withKey:key)
+    public func getRequestFromCache(withKey key:URL) -> RequestDetail? {
+        return CacheServices.sharedInstance.getContent(withKey:key)
     }
     
     
-    public func removeFileFromCache(withKey key:URL) {
-        CacheServices.sharedInstance.deleteContent(withKey: key)
+    public func removeRequestFromCache(withKey key:URL) {
+        CacheServices.sharedInstance.removeContent(withKey: key)
     }
 }

@@ -10,41 +10,24 @@ import Foundation
 public class RequestDetail: NSObject {
     public var requestUrl:URL?
     public var data:Data?
-    public var urlSessionTaskID:Int?
-    public var responseHandler:[ResponseHandler]?
+    public var taskHandler:[TaskHandler]?
     
-    init(requestUrl:URL?, data:Data?, urlSessionTaskID:Int, responseHandler:[ResponseHandler]) {
+    init(requestUrl:URL?, data:Data?, taskHandler:[TaskHandler]) {
         self.requestUrl = requestUrl
         self.data = data
-        self.urlSessionTaskID = urlSessionTaskID
-        self.responseHandler = responseHandler
+        self.taskHandler = taskHandler
     }
 }
 
-public class ResponseHandler: NSObject {
+public class TaskHandler: NSObject {
     public var downloadHelperTaskID:Int?
-    public var progress:ProgressClosure?
-    public var completion:CompletionClosure?
+    public var progress:HelperTaskProgress?
+    public var completion:HelperTaskCompletion?
     
     
-    init(downloadHelperTaskID:Int, progress:@escaping ProgressClosure, completion:@escaping CompletionClosure) {
+    init(downloadHelperTaskID:Int, progress:@escaping HelperTaskProgress, completion:@escaping HelperTaskCompletion) {
         self.downloadHelperTaskID = downloadHelperTaskID
         self.progress = progress
         self.completion = completion
     }
-    
-//    required public init(coder decoder: NSCoder) {
-//
-//        self.downloadHelperTaskID = decoder.decodeInteger(forKey: "downloadHelperTaskID")
-//        self.progress = decoder.decodeObject(forKey: "progress") as? ProgressClosure
-//        self.completion = decoder.decodeObject(forKey:"completion") as? CompletionClosure
-//
-//    }
-//
-//    public func encode(with coder: NSCoder) {
-//        coder.encode(downloadHelperTaskID, forKey: "downloadHelperTaskID")
-//        coder.encode(progress, forKey: "progress")
-//        coder.encode(completion, forKey: "completion")
-//
-//    }
 }

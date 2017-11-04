@@ -7,18 +7,17 @@
 //
 
 import Foundation
-public typealias ProgressClosure = (Float) -> ()
-public typealias CompletionClosure = (DefaultDownloadResponse) -> ()
+
 public class FileDownloadHelper: NSObject {
     
     public static var sharedUniqueId:Int = 0
-    var taskId:Int = 0
+    var taskId:Int = 0 // Task Identifier
     var url:URL?
-    var progress:ProgressClosure?
-    var completion:CompletionClosure?
+    var progress:HelperTaskProgress?
+    var completion:HelperTaskCompletion?
     
-    public init(withUrl url:URL, Progress progress:@escaping ProgressClosure, Completion completion:@escaping CompletionClosure) {
-        FileDownloadHelper.sharedUniqueId += 1
+    public init(withUrl url:URL, Progress progress:@escaping HelperTaskProgress, Completion completion:@escaping HelperTaskCompletion) {
+        FileDownloadHelper.sharedUniqueId += 1 // create unique task identifier
         self.taskId = FileDownloadHelper.sharedUniqueId
         self.url = url
         self.progress = progress
@@ -26,11 +25,11 @@ public class FileDownloadHelper: NSObject {
     }
     
     public func startDownload() {
-        DownloadTaskController().startDownload(FromURL: url!, withTaskId:taskId, withProgress:progress!, withCompleteion: completion!)
+       StartDownloader.sharedInstance.startDownload(FromURL: url!, withTaskId:taskId, withProgress:progress!, withCompleteion: completion!)
     }
     
     public func cancelDownload(){
-       return DownloadTaskController().cancelDownload(WithURL: url!, TaskId:taskId)
+        CancelDownloader.sharedInstance.cancelDownload(WithURL: url!, TaskId:taskId)
     }
     
     

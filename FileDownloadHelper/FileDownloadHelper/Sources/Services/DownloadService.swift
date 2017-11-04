@@ -12,35 +12,22 @@ public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessio
     
     static var config:URLSessionConfiguration?
     static var session:URLSession?
-    var progressClosure:DownloadProgressClosure?
-    var completionClosure:DownloadCompletionClosure?
+    var progressClosure:SessionTaskProgress?
+    var completionClosure:SessionTaskCompletion?
     
-    public func download(FromURL url:URL, withProgress progress:@escaping DownloadProgressClosure, withCompleteion completion:@escaping DownloadCompletionClosure) -> Int {
+    
+    // MARK: - Download Service
+    public func download(FromURL url:URL, withProgress progress:@escaping SessionTaskProgress, withCompleteion completion:@escaping SessionTaskCompletion) {
         progressClosure = progress
         completionClosure = completion
         DownloadService.config = URLSessionConfiguration.background(withIdentifier: "com.arunjose")
         DownloadService.session = URLSession(configuration: DownloadService.config!, delegate: self, delegateQueue: OperationQueue.main)
         let task = DownloadService.session?.downloadTask(with: url)
         task?.resume()
-        return (task?.taskIdentifier)!
     }
     
-    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,
-                           didWriteData bytesWritten: Int64, totalBytesWritten: Int64,
-                           totalBytesExpectedToWrite: Int64) {
-        let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
-        progressClosure!(progress)
-    }
-    
-    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-//        let fileData:Data? = FileManager.default.contents(atPath: String(describing: location))
-        if let fileData:NSData = NSData(contentsOf: location) {
-            completionClosure!((fileData as Data))
-        }
-    }
-    
-    
-    public func cancelDownload(WithURL url:URL) {
+    // MARK: - Cancel Download Service
+    public func cancel(WithURL url:URL) {
         
         if  DownloadService.session != nil{
             DownloadService.session?.getTasksWithCompletionHandler { (tasks, uploads, downloads) in
@@ -52,9 +39,20 @@ public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessio
                 }
             }
             
-        }else{
-            
         }
     }
-
+    // MARK: - URLSession download delegates
+    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,
+                           didWriteData bytesWritten: Int64, totalBytesWritten: Int64,
+                           totalBytesExpectedToWrite: Int64) {
+        let progress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+        progressClosure!(progress)
+    }
+    
+    public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        if let fileData:NSData = NSData(contentsOf: location) {
+            completionClosure!((fileData as Data))
+        }
+    }
+    
 }
