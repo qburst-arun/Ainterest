@@ -14,7 +14,7 @@ class CacheServices: NSObject {
     public static let sharedInstance = CacheServices()
     private var cache:NSCache = NSCache<AnyObject,RequestDetail>()
     
-    public func configureCacheSize(maxlimitOfObjects:Int) {
+    public func configureSize(maxlimitOfObjects:Int) {
         cache.countLimit = maxlimitOfObjects
     }
     public func removeContent(withKey key:URL) {

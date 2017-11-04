@@ -12,6 +12,9 @@ public class CacheController: NSObject {
     // Shared instance
     public static let sharedInstance = CacheController()
     
+    public func setCacheLimit(withMaxObjects limit:Int) {
+        CacheServices.sharedInstance.configureSize(maxlimitOfObjects: limit)
+    }
     public func clearCache() {
      CacheServices.sharedInstance.clearAll()
     }

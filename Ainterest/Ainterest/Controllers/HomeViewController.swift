@@ -49,7 +49,8 @@ class HomeViewController: UIViewController {
     */
     
     @IBAction func testDownload(_ sender: Any) {
-        
+        FileDownloadHelper.setCacheLimit(limit: 20) // Set Cache limit for download helper
+
         let progress = {(progress:Float) -> (Void) in
            // NSLog("progress:- \(progress)");
         }
@@ -67,10 +68,10 @@ class HomeViewController: UIViewController {
         let downloadTask = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
         downloadTask.startDownload()
         
-        let downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
-        downloadTask1.startDownload()
+//        let downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
+//        downloadTask1.startDownload()
         
-        downloadTask.cancelDownload()
+//        downloadTask.cancelDownload()
         
         
     }

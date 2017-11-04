@@ -32,5 +32,8 @@ public class FileDownloadHelper: NSObject {
         CancelDownloader.sharedInstance.cancelDownload(WithURL: url!, TaskId:taskId)
     }
     
+    static public func setCacheLimit(limit:Int){
+        CacheController.sharedInstance.setCacheLimit(withMaxObjects: limit)
+    }
     
 }
