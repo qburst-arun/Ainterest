@@ -14,11 +14,11 @@ public class CacheController: NSObject {
     
     }
     
-    public func addFileToCache(withKey key:URL, withValue value:DefaultDownloadResponse) {
+    public func addFileToCache(withKey key:URL, withValue value:RequestDetail) {
         CacheServices.sharedInstance.insertToCache(withKey: key, withValue: value)
     }
     
-    public func checkUrlExistInCache(withKey key:URL) -> DefaultDownloadResponse? {
+    public func checkUrlExistInCache(withKey key:URL) -> RequestDetail? {
         
         return CacheServices.sharedInstance.retriveContentFromCache(withKey:key)
     }

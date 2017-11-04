@@ -8,13 +8,13 @@
 
 import Foundation
 public class DefaultDownloadResponse: NSObject {
-    public var requestUrl:String?
+    public var requestUrl:URL?
     public var data:Data?
-    public var totalCalls:Int?
+    public var error:Error?
     
-    init(withRequestUrl requestUrl:String?, withData data:Data?, withTotalCalls totalCalls:Int?) {
+    init(withRequestUrl requestUrl:URL?, withData data:Data?, withError error:Error?) {
         self.requestUrl = requestUrl
         self.data = data
-        self.totalCalls = totalCalls
+        self.error = error
     }
 }

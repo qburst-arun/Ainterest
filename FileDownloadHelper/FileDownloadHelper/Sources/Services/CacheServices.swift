@@ -12,7 +12,7 @@ class CacheServices: NSObject {
 
     // MARK: - Shared Instance
     public static let sharedInstance = CacheServices()
-    private var cache:NSCache = NSCache<AnyObject,DefaultDownloadResponse>()
+    private var cache:NSCache = NSCache<AnyObject,RequestDetail>()
     
     public func configureCacheSize(maxlimitOfObjects:Int) {
         cache.countLimit = maxlimitOfObjects
@@ -21,13 +21,13 @@ class CacheServices: NSObject {
         cache.removeObject(forKey: key as AnyObject)
     }
     
-    public func insertToCache(withKey key:URL, withValue value:DefaultDownloadResponse) {
+    public func insertToCache(withKey key:URL, withValue value:RequestDetail) {
         cache.setObject(value, forKey: key as AnyObject)
     }
     
-    public func retriveContentFromCache(withKey key:URL) -> DefaultDownloadResponse? {
+    public func retriveContentFromCache(withKey key:URL) -> RequestDetail? {
         
-        if let value:DefaultDownloadResponse = cache.object(forKey: key as AnyObject ){
+        if let value:RequestDetail = cache.object(forKey: key as AnyObject ){
             return value
         }else{
             return nil

@@ -11,20 +11,26 @@ public typealias ProgressClosure = (Float) -> ()
 public typealias CompletionClosure = (DefaultDownloadResponse) -> ()
 public class FileDownloadHelper: NSObject {
     
-    private override init() {    }
-    // MARK: - Shared Instance
-    public static let sharedInstance = FileDownloadHelper()
+    public static var sharedUniqueId:Int = 0
+    var taskId:Int = 0
+    var url:URL?
+    var progress:ProgressClosure?
+    var completion:CompletionClosure?
     
-//    init(fileDownloadController: FileDownloadController) {
-//        self.fileDownloadController = fileDownloadController
-//    }
-    
-    public func startDownload(FromURL url:URL, withProgress progress:@escaping ProgressClosure, withCompleteion completion:@escaping CompletionClosure) {
-        DownloadTaskController().startDownload(FromURL: url, withProgress:progress, withCompleteion: completion)
+    public init(withUrl url:URL, Progress progress:@escaping ProgressClosure, Completion completion:@escaping CompletionClosure) {
+        FileDownloadHelper.sharedUniqueId += 1
+        self.taskId = FileDownloadHelper.sharedUniqueId
+        self.url = url
+        self.progress = progress
+        self.completion = completion
     }
     
-    public func cancelDownload(FromURL url:URL) {
-        DownloadTaskController().cancelDownload(FromURL: url)
+    public func startDownload() {
+        DownloadTaskController().startDownload(FromURL: url!, withTaskId:taskId, withProgress:progress!, withCompleteion: completion!)
+    }
+    
+    public func cancelDownload() {
+//        DownloadTaskController().cancelDownload(FromURL: url!, withTaskId:taskId)
     }
     
     
