@@ -14,7 +14,11 @@ class HomeViewController: UIViewController {
     var itemsWidth = [100, 400, 350, 40, 125, 100, 100, 150, 400, 50]
     var postCollectionDataSource:PostCollectionDataSource? = nil
     var postCollectionDelegate:PostCollectionDelegate? = nil
+    var url:URL?
+    static var postsList:[PostDetails] = []
+    
     @IBOutlet weak var postCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        test()
@@ -28,8 +32,16 @@ class HomeViewController: UIViewController {
         postCollectionView.dataSource = postCollectionDataSource
         postCollectionView.delegate = postCollectionDelegate
         
-        postCollectionView.reloadData()
+//        postCollectionView.reloadData()
         // Do any additional setup after loading the view.
+        APIController().getPostsDetails(completion: {postsList, error in
+            
+            HomeViewController.postsList = postsList!
+            DispatchQueue.main.async {
+                self.postCollectionView.reloadData()
+            }
+        })
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,20 +70,20 @@ class HomeViewController: UIViewController {
             if success.error == nil{
             NSLog("success:- \(success)");
             let image = UIImage(data:success.data!,scale:1.0)
-            
+            print("done")
             }else{
                 NSLog("Failure:- \(success)");            }
         }
         let url = URL.init(string: "https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=4b142941bfd18159e2e4d166abcd0705")
         
         //        let url = URL.init(string: "http://www.otc.umd.edu/sites/default/files/documents/sample-license.pdf")
-        let downloadTask = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
+        let downloadTask = FileDownloadHelper(withUrl: self.url!, Progress: progress, Completion: completion)
         downloadTask.startDownload()
         
-        let downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
-        downloadTask1.startDownload()
-        
-        downloadTask.cancelDownload()
+//        let downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
+//        downloadTask1.startDownload()
+//
+//        downloadTask.cancelDownload()
         
         
     }
@@ -106,7 +118,8 @@ extension HomeViewController : PostsLayoutDelegate {
     
     // 1. Returns the photo height
     func collectionView(_ collectionView: UICollectionView, sizeForPhotoAtIndexPath indexPath:IndexPath) -> CGSize {
-        return  CGSize(width: itemsWidth[indexPath.item], height: itemsHieght[indexPath.item])
+        let postDetail = HomeViewController.postsList[indexPath.item]
+        return  CGSize(width: postDetail.imageWidth!, height: postDetail.imageHeight!)
     }
     
 }

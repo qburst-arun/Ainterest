@@ -12,6 +12,9 @@
 		CEC000831FAEF925005F7136 /* StartDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */; };
 		CEC000851FAEFD4B005F7136 /* CancelDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */; };
 		CEC000871FAF135C005F7136 /* CacheControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000861FAF135C005F7136 /* CacheControllerTests.swift */; };
+		CEC0008A1FAF19B8005F7136 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000891FAF19B8005F7136 /* APIServices.swift */; };
+		CEC0008D1FAF3775005F7136 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0008C1FAF3773005F7136 /* APIController.swift */; };
+		CEC000901FAF37FD005F7136 /* PostDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0008F1FAF37FD005F7136 /* PostDetails.swift */; };
 		CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */; };
 		CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */; };
 		CEC8BDC51FAAEF5E00C5C526 /* PostCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */; };
@@ -57,6 +60,9 @@
 		CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDownloaderTests.swift; sourceTree = "<group>"; };
 		CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelDownloaderTests.swift; sourceTree = "<group>"; };
 		CEC000861FAF135C005F7136 /* CacheControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheControllerTests.swift; sourceTree = "<group>"; };
+		CEC000891FAF19B8005F7136 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		CEC0008C1FAF3773005F7136 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		CEC0008F1FAF37FD005F7136 /* PostDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetails.swift; sourceTree = "<group>"; };
 		CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDataSource.swift; sourceTree = "<group>"; };
 		CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDelegate.swift; sourceTree = "<group>"; };
@@ -140,7 +146,7 @@
 			path = FileDownloadHeplerTests;
 			sourceTree = "<group>";
 		};
-		CEC8BDBA1FAAD9AB00C5C526 /* Controllers */ = {
+		CEC000881FAF1806005F7136 /* HomeController */ = {
 			isa = PBXGroup;
 			children = (
 				CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */,
@@ -148,6 +154,31 @@
 				CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */,
 				CEF876241FAB2D1800AEFC4E /* PostsLayout.swift */,
 				CEC8BDBF1FAAEE6A00C5C526 /* PostCollectionCell */,
+			);
+			path = HomeController;
+			sourceTree = "<group>";
+		};
+		CEC0008B1FAF3736005F7136 /* APIController */ = {
+			isa = PBXGroup;
+			children = (
+				CEC0008C1FAF3773005F7136 /* APIController.swift */,
+			);
+			path = APIController;
+			sourceTree = "<group>";
+		};
+		CEC0008E1FAF37DE005F7136 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEC0008F1FAF37FD005F7136 /* PostDetails.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEC8BDBA1FAAD9AB00C5C526 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEC0008B1FAF3736005F7136 /* APIController */,
+				CEC000881FAF1806005F7136 /* HomeController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +193,7 @@
 		CEC8BDBC1FAAD9C100C5C526 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CEC000891FAF19B8005F7136 /* APIServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -201,9 +233,10 @@
 		CED6ADE01FA9A82200D36114 /* Ainterest */ = {
 			isa = PBXGroup;
 			children = (
+				CEC0008E1FAF37DE005F7136 /* Models */,
 				CEC8BDBA1FAAD9AB00C5C526 /* Controllers */,
-				CEC8BDBB1FAAD9C100C5C526 /* Constants */,
 				CEC8BDBC1FAAD9C100C5C526 /* Services */,
+				CEC8BDBB1FAAD9C100C5C526 /* Constants */,
 				CED6ADE11FA9A82200D36114 /* AppDelegate.swift */,
 				CED6ADE51FA9A82200D36114 /* Main.storyboard */,
 				CED6ADE81FA9A82200D36114 /* Assets.xcassets */,
@@ -466,11 +499,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC000901FAF37FD005F7136 /* PostDetails.swift in Sources */,
 				CEF876231FAB2A2E00AEFC4E /* PostCollectionViewCell.swift in Sources */,
 				CEF876251FAB2D1800AEFC4E /* PostsLayout.swift in Sources */,
 				CED6ADE21FA9A82200D36114 /* AppDelegate.swift in Sources */,
 				CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */,
+				CEC0008D1FAF3775005F7136 /* APIController.swift in Sources */,
 				CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */,
+				CEC0008A1FAF19B8005F7136 /* APIServices.swift in Sources */,
 				CEC8BDC51FAAEF5E00C5C526 /* PostCollectionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
