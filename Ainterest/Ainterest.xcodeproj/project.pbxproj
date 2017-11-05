@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CEC0007D1FAEF749005F7136 /* PBXContainerItemProxy */ = {
+		CEC000911FAF7156005F7136 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CED6ADD61FA9A82200D36114 /* Project object */;
 			proxyType = 1;
@@ -278,7 +278,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CEC0007E1FAEF749005F7136 /* PBXTargetDependency */,
+				CEC000921FAF7156005F7136 /* PBXTargetDependency */,
 			);
 			name = FileDownloadHeplerTests;
 			productName = FileDownloadHeplerTests;
@@ -530,10 +530,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CEC0007E1FAEF749005F7136 /* PBXTargetDependency */ = {
+		CEC000921FAF7156005F7136 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CED6ADDD1FA9A82200D36114 /* Ainterest */;
-			targetProxy = CEC0007D1FAEF749005F7136 /* PBXContainerItemProxy */;
+			targetProxy = CEC000911FAF7156005F7136 /* PBXContainerItemProxy */;
 		};
 		CED6ADF41FA9A82200D36114 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -570,7 +570,6 @@
 		CEC000801FAEF749005F7136 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FileDownloadHeplerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -585,7 +584,6 @@
 		CEC000811FAEF749005F7136 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FileDownloadHeplerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

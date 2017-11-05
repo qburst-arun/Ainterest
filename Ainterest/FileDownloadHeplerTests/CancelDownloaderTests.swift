@@ -14,10 +14,16 @@ class CancelDownloaderTests: XCTestCase {
     var downloadTask1:FileDownloadHelper?
     var downloadTask2:FileDownloadHelper?
     var url:URL?
+    var url2:URL?
+    var url1:URL?
     override func setUp() {
         super.setUp()
         // Put setup code here.
-        url = URL.init(string: "https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=4b142941bfd18159e2e4d166abcd0705")
+        url = URL(string: "https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=4b142941bfd18159e2e4d166abcd0705")
+        
+        url1 = URL(string: "https://images.unsplash.com/photo-1464550580740-b3f73fd373cb?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=aff4510c05325ad3c7b07ed7062b10c5")
+        
+        url2 = URL(string: "http://www.otc.umd.edu/sites/default/files/documents/sample-license.pdf")
     }
     
     override func tearDown() {
@@ -26,18 +32,7 @@ class CancelDownloaderTests: XCTestCase {
         downloadTask1 = nil
         downloadTask2 = nil
         url = nil
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        url2 = nil
     }
     
     func testCancelSingleDownload() {
@@ -61,7 +56,8 @@ class CancelDownloaderTests: XCTestCase {
         wait(for: [promiseCanceled], timeout: 10)
     }
     
-    func testCancelDownloadWithoutEffectingOthers() {
+    
+    func testCancelDownloadWithoutEffectingSameURLs() {
         let promiseTask1Canceled = expectation(description: "Download canceled")
         let promiseTask2Complete = expectation(description: "Download completed")
         

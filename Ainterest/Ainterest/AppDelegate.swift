@@ -10,7 +10,10 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    static func isTesting() -> Bool {
+        return (ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil)
+    }
     var window: UIWindow?
 
 

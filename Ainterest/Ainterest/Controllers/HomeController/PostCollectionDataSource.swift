@@ -33,8 +33,10 @@ public class PostCollectionDataSource: NSObject, UICollectionViewDataSource {
         let imageUrl = HomeViewController.postsList[indexPath.item].imageUrl!
         let downloadTask = FileDownloadHelper(withUrl:imageUrl , Progress: {progress in
         }, Completion: {response in
-             DispatchQueue.main.async {
-                cell.postImageView.image = UIImage(data:response.data!,scale:1.0)
+            if response.error == nil{
+                DispatchQueue.main.async {
+                    cell.postImageView.image = UIImage(data:response.data!,scale:1.0)
+                }
             }
             
         })

@@ -10,30 +10,29 @@ import Foundation
 
 public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessionDelegate, URLSessionTaskDelegate{
     
-    lazy var session: URLSession = {
-        let configuration = URLSessionConfiguration.default
-        return URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-    }()
-    
+    static var session: URLSession?
+    static var backgroundTaskID:Int = 0
     var progressClosure:SessionTaskProgress?
     var completionClosure:SessionTaskCompletion?
     
+    override init(){
+        DownloadService.backgroundTaskID += 1
+    }
     
     // MARK: - Download Service
-    
     public func download(FromURL url:URL, withProgress progress:@escaping SessionTaskProgress, withCompleteion completion:@escaping SessionTaskCompletion) {
         progressClosure = progress
         completionClosure = completion
-//        DownloadService.session = URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "backgroundsessions"), delegate: self, delegateQueue: OperationQueue.main)
-        let task = session.downloadTask(with: url)
-        task.resume()
+        let backgroudTaskId = String(Bundle.main.bundleIdentifier!) + "_" + String(DownloadService.backgroundTaskID)
+        DownloadService.session = URLSession(configuration: URLSessionConfiguration.background(withIdentifier:backgroudTaskId), delegate: self, delegateQueue: OperationQueue.main)
+        let task = DownloadService.session?.downloadTask(with: url)
+        task?.resume()
     }
     
     // MARK: - Cancel Download Service
     public func cancel(WithURL url:URL) {
-        
-//        if  DownloadService.session != nil{
-            session.getTasksWithCompletionHandler { (tasks, uploads, downloads) in
+        if  DownloadService.session != nil{
+        DownloadService.session?.getTasksWithCompletionHandler { (tasks, uploads, downloads) in
                 
                 for task in downloads {
                     if task.originalRequest?.url == url{
@@ -42,7 +41,7 @@ public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessio
                 }
             }
             
-//        }
+        }
     }
     // MARK: - URLSession download delegates
     public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask,

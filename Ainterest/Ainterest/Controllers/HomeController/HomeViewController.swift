@@ -34,6 +34,7 @@ class HomeViewController: UIViewController {
         
 //        postCollectionView.reloadData()
         // Do any additional setup after loading the view.
+        if !AppDelegate.isTesting(){
         APIController().getPostsDetails(completion: {postsList, error in
             
             HomeViewController.postsList = postsList!
@@ -41,6 +42,7 @@ class HomeViewController: UIViewController {
                 self.postCollectionView.reloadData()
             }
         })
+        }
     
     }
 
