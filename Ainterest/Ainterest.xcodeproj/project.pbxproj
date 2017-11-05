@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A75943E3EA6AB161EAD745C9 /* Pods_Ainterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3265C1429B868EC7316066 /* Pods_Ainterest.framework */; };
+		CE32D16C1FAFB1D6009734E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE32D16B1FAFB1D6009734E3 /* Constants.swift */; };
 		CEC0007B1FAEF749005F7136 /* FileDownloadHeplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0007A1FAEF749005F7136 /* FileDownloadHeplerTests.swift */; };
 		CEC000831FAEF925005F7136 /* StartDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */; };
 		CEC000851FAEFD4B005F7136 /* CancelDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		6FB3C52C0CDDA98DD9287DBA /* Pods-Ainterest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ainterest.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Ainterest/Pods-Ainterest.release.xcconfig"; sourceTree = "<group>"; };
+		CE32D16B1FAFB1D6009734E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEC000781FAEF748005F7136 /* FileDownloadHeplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileDownloadHeplerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC0007A1FAEF749005F7136 /* FileDownloadHeplerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHeplerTests.swift; sourceTree = "<group>"; };
 		CEC0007C1FAEF749005F7136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		CEC8BDBB1FAAD9C100C5C526 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				CE32D16B1FAFB1D6009734E3 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				CEF876251FAB2D1800AEFC4E /* PostsLayout.swift in Sources */,
 				CED6ADE21FA9A82200D36114 /* AppDelegate.swift in Sources */,
 				CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */,
+				CE32D16C1FAFB1D6009734E3 /* Constants.swift in Sources */,
 				CEC0008D1FAF3775005F7136 /* APIController.swift in Sources */,
 				CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */,
 				CEC0008A1FAF19B8005F7136 /* APIServices.swift in Sources */,

@@ -11,8 +11,8 @@ import Foundation
 public class APIServices: NSObject {
     public static let sharedInstance = APIServices()
     
-    public func getRequest(withUrl:URL, completion:@escaping ((Data?, Error?) -> ())){
-        var request = URLRequest(url: URL(string: "https://pastebin.com/raw/wgkJgazE")!)
+    public func getRequest(withUrl url:URL, completion:@escaping ((Data?, Error?) -> ())){
+        var request = URLRequest(url:url)
         request.httpMethod = "GET"
         let session = URLSession.shared
         

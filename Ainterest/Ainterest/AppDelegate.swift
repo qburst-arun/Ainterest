@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     static func isTesting() -> Bool {
-        return (ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil)
+        return (ProcessInfo.processInfo.environment[Constants.XCTEST_PATH_KEY] != nil)
     }
     var window: UIWindow?
 
