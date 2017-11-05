@@ -11,19 +11,20 @@ import XCTest
 
 class CancelDownloaderTests: XCTestCase {
     
-    var taskId:Int?
+    var downloadTask1:FileDownloadHelper?
+    var downloadTask2:FileDownloadHelper?
     var url:URL?
     override func setUp() {
         super.setUp()
-        // Put setup code here. This metho
-        taskId = 1
+        // Put setup code here.
         url = URL.init(string: "https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=4b142941bfd18159e2e4d166abcd0705")
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        taskId = nil
+        downloadTask1 = nil
+        downloadTask2 = nil
         url = nil
     }
     
@@ -39,22 +40,59 @@ class CancelDownloaderTests: XCTestCase {
         }
     }
     
-    func testCancelDownload() {
-        let promiseProgerss = expectation(description: "progress reached")
-        let promiseCompletion = expectation(description: "complletion reached")
+    func testCancelSingleDownload() {
+        let promiseCanceled = expectation(description: "Download canceled")
         
-        StartDownloader.sharedInstance.startDownload(FromURL: url!, withTaskId: taskId!, withProgress: {progress in
-            if progress == 1{
-                promiseProgerss.fulfill()
-            }
-        }, withCompleteion: {response in
-            if response.error != nil{
-                XCTFail("File Download Failed")
+        downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: {progress in
+           
+        }, Completion: {response in
+            if response.error != nil && (response.error! as NSError).code == -999{
+                promiseCanceled.fulfill()
                 
             }else{
-                promiseCompletion.fulfill()
+                XCTFail("Cancel operation failed")
             }
         })
-        wait(for: [promiseProgerss,promiseCompletion], timeout: 10)
+        
+        
+        downloadTask1?.startDownload()
+        downloadTask1?.cancelDownload()
+        
+        wait(for: [promiseCanceled], timeout: 10)
     }
+    
+    func testCancelDownloadWithoutEffectingOthers() {
+        let promiseTask1Canceled = expectation(description: "Download canceled")
+        let promiseTask2Complete = expectation(description: "Download completed")
+        
+        downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: {progress in
+            
+        }, Completion: {response in
+            if response.error != nil && (response.error! as NSError).code == -999{
+                promiseTask1Canceled.fulfill()
+                
+            }else{
+                XCTFail("Cancel operation failed")
+            }
+        })
+        
+        downloadTask2 = FileDownloadHelper(withUrl: url!, Progress: {progress in
+            
+        }, Completion: {response in
+            if response.error != nil && (response.error! as NSError).code == -999{
+               
+                XCTFail("Cancel operation failed")
+            }else{
+                promiseTask2Complete.fulfill()
+            }
+        })
+        
+        downloadTask1?.startDownload()// starts task1
+        downloadTask2?.startDownload()// starts task2
+        
+        downloadTask1?.cancelDownload()// cacncel task1
+        
+        wait(for: [promiseTask2Complete,promiseTask1Canceled], timeout: 10)
+    }
+    
 }

@@ -11,6 +11,7 @@
 		CEC0007B1FAEF749005F7136 /* FileDownloadHeplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0007A1FAEF749005F7136 /* FileDownloadHeplerTests.swift */; };
 		CEC000831FAEF925005F7136 /* StartDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */; };
 		CEC000851FAEFD4B005F7136 /* CancelDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */; };
+		CEC000871FAF135C005F7136 /* CacheControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000861FAF135C005F7136 /* CacheControllerTests.swift */; };
 		CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */; };
 		CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */; };
 		CEC8BDC51FAAEF5E00C5C526 /* PostCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */; };
@@ -55,6 +56,7 @@
 		CEC0007C1FAEF749005F7136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDownloaderTests.swift; sourceTree = "<group>"; };
 		CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelDownloaderTests.swift; sourceTree = "<group>"; };
+		CEC000861FAF135C005F7136 /* CacheControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheControllerTests.swift; sourceTree = "<group>"; };
 		CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDataSource.swift; sourceTree = "<group>"; };
 		CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				CEC0007C1FAEF749005F7136 /* Info.plist */,
 				CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */,
 				CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */,
+				CEC000861FAF135C005F7136 /* CacheControllerTests.swift */,
 			);
 			path = FileDownloadHeplerTests;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC000871FAF135C005F7136 /* CacheControllerTests.swift in Sources */,
 				CEC0007B1FAEF749005F7136 /* FileDownloadHeplerTests.swift in Sources */,
 				CEC000831FAEF925005F7136 /* StartDownloaderTests.swift in Sources */,
 				CEC000851FAEFD4B005F7136 /* CancelDownloaderTests.swift in Sources */,

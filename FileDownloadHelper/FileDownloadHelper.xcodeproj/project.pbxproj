@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE1901F01FAC27D900B64F73 /* FileDownloadHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1901E61FAC27D900B64F73 /* FileDownloadHelper.framework */; };
-		CE1901F51FAC27D900B64F73 /* FileDownloadHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1901F41FAC27D900B64F73 /* FileDownloadHelperTests.swift */; };
 		CE1901F71FAC27D900B64F73 /* FileDownloadHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1901E91FAC27D900B64F73 /* FileDownloadHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE19020B1FAC2CB100B64F73 /* FileDownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE19020A1FAC2CB100B64F73 /* FileDownloadHelper.swift */; };
 		CEC0001F1FAC7A5F005F7136 /* CacheController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0001E1FAC7A5F005F7136 /* CacheController.swift */; };
@@ -19,26 +17,12 @@
 		CEC0002D1FADED88005F7136 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0002C1FADED88005F7136 /* Constants.swift */; };
 		CEC000311FADF05A005F7136 /* StartDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000301FADF05A005F7136 /* StartDownloader.swift */; };
 		CEC000331FADFD71005F7136 /* CancelDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000321FADFD71005F7136 /* CancelDownloader.swift */; };
-		CEC000351FAE1E70005F7136 /* StartDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000341FAE1E70005F7136 /* StartDownloaderTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CE1901F11FAC27D900B64F73 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE1901DD1FAC27D900B64F73 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE1901E51FAC27D900B64F73;
-			remoteInfo = FileDownloadHelper;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		CE1901E61FAC27D900B64F73 /* FileDownloadHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FileDownloadHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1901E91FAC27D900B64F73 /* FileDownloadHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileDownloadHelper.h; sourceTree = "<group>"; };
 		CE1901EA1FAC27D900B64F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE1901EF1FAC27D900B64F73 /* FileDownloadHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileDownloadHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE1901F41FAC27D900B64F73 /* FileDownloadHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHelperTests.swift; sourceTree = "<group>"; };
-		CE1901F61FAC27D900B64F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE19020A1FAC2CB100B64F73 /* FileDownloadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHelper.swift; sourceTree = "<group>"; };
 		CEC0001E1FAC7A5F005F7136 /* CacheController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheController.swift; sourceTree = "<group>"; };
 		CEC000201FAC7C43005F7136 /* CacheServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheServices.swift; sourceTree = "<group>"; };
@@ -48,7 +32,6 @@
 		CEC0002C1FADED88005F7136 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEC000301FADF05A005F7136 /* StartDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDownloader.swift; sourceTree = "<group>"; };
 		CEC000321FADFD71005F7136 /* CancelDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelDownloader.swift; sourceTree = "<group>"; };
-		CEC000341FAE1E70005F7136 /* StartDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartDownloaderTests.swift; path = ../../Ainterest/FileDownloaderHelperTests/StartDownloaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,14 +42,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE1901EC1FAC27D900B64F73 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE1901F01FAC27D900B64F73 /* FileDownloadHelper.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -74,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				CE1901E81FAC27D900B64F73 /* FileDownloadHelper */,
-				CE1901F31FAC27D900B64F73 /* FileDownloadHelperTests */,
 				CE1901E71FAC27D900B64F73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				CE1901E61FAC27D900B64F73 /* FileDownloadHelper.framework */,
-				CE1901EF1FAC27D900B64F73 /* FileDownloadHelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,16 +70,6 @@
 				CE1901EA1FAC27D900B64F73 /* Info.plist */,
 			);
 			path = FileDownloadHelper;
-			sourceTree = "<group>";
-		};
-		CE1901F31FAC27D900B64F73 /* FileDownloadHelperTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE1901F41FAC27D900B64F73 /* FileDownloadHelperTests.swift */,
-				CEC000341FAE1E70005F7136 /* StartDownloaderTests.swift */,
-				CE1901F61FAC27D900B64F73 /* Info.plist */,
-			);
-			path = FileDownloadHelperTests;
 			sourceTree = "<group>";
 		};
 		CE1902001FAC2C5B00B64F73 /* Documentation */ = {
@@ -204,24 +167,6 @@
 			productReference = CE1901E61FAC27D900B64F73 /* FileDownloadHelper.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CE1901EE1FAC27D900B64F73 /* FileDownloadHelperTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE1901FD1FAC27D900B64F73 /* Build configuration list for PBXNativeTarget "FileDownloadHelperTests" */;
-			buildPhases = (
-				CE1901EB1FAC27D900B64F73 /* Sources */,
-				CE1901EC1FAC27D900B64F73 /* Frameworks */,
-				CE1901ED1FAC27D900B64F73 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE1901F21FAC27D900B64F73 /* PBXTargetDependency */,
-			);
-			name = FileDownloadHelperTests;
-			productName = FileDownloadHelperTests;
-			productReference = CE1901EF1FAC27D900B64F73 /* FileDownloadHelperTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -235,10 +180,6 @@
 					CE1901E51FAC27D900B64F73 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-					};
-					CE1901EE1FAC27D900B64F73 = {
-						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -256,20 +197,12 @@
 			projectRoot = "";
 			targets = (
 				CE1901E51FAC27D900B64F73 /* FileDownloadHelper */,
-				CE1901EE1FAC27D900B64F73 /* FileDownloadHelperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE1901E41FAC27D900B64F73 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE1901ED1FAC27D900B64F73 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,24 +228,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE1901EB1FAC27D900B64F73 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE1901F51FAC27D900B64F73 /* FileDownloadHelperTests.swift in Sources */,
-				CEC000351FAE1E70005F7136 /* StartDownloaderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CE1901F21FAC27D900B64F73 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE1901E51FAC27D900B64F73 /* FileDownloadHelper */;
-			targetProxy = CE1901F11FAC27D900B64F73 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE1901F81FAC27D900B64F73 /* Debug */ = {
@@ -473,34 +389,6 @@
 			};
 			name = Release;
 		};
-		CE1901FE1FAC27D900B64F73 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FileDownloadHelperTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arun.ainterest.FileDownloadHelperTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CE1901FF1FAC27D900B64F73 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = FileDownloadHelperTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arun.ainterest.FileDownloadHelperTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -518,15 +406,6 @@
 			buildConfigurations = (
 				CE1901FB1FAC27D900B64F73 /* Debug */,
 				CE1901FC1FAC27D900B64F73 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE1901FD1FAC27D900B64F73 /* Build configuration list for PBXNativeTarget "FileDownloadHelperTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE1901FE1FAC27D900B64F73 /* Debug */,
-				CE1901FF1FAC27D900B64F73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
