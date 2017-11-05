@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     var postCollectionDelegate:PostCollectionDelegate? = nil
     static var postsList:[PostDetails] = []
     var refreshControl:UIRefreshControl?
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle:UIActivityIndicatorViewStyle.whiteLarge )
     
     @IBOutlet weak var postCollectionView: UICollectionView!
     
@@ -22,14 +23,15 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         if !AppDelegate.isTesting(){
-            intizialisePostCollectionView()
+            initializePostCollectionView()
             setupPullToRefresh()
+            initializeActivityIndicator()
             getPostDetails()
         }
         
     }
     
-    func intizialisePostCollectionView(){
+    func initializePostCollectionView(){
         if let layout = postCollectionView.collectionViewLayout as? PostsLayout {
             layout.delegate = self
         }
@@ -41,6 +43,8 @@ class HomeViewController: UIViewController {
     }
     
     func getPostDetails(){
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         
         APIController().getPostsDetails(completion: {postsList, error in
             HomeViewController.postsList = postsList!
@@ -49,6 +53,7 @@ class HomeViewController: UIViewController {
                     self.refreshControl?.endRefreshing()
                 }
                 self.postCollectionView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         })
         
@@ -66,6 +71,12 @@ class HomeViewController: UIViewController {
     
     func refreshPostsCollection(){
         getPostDetails()
+    }
+    
+    func initializeActivityIndicator(){
+        activityIndicator.isHidden = true
+        activityIndicator.center = self.view.center
+        self.view.addSubview(activityIndicator)
     }
     
     override func didReceiveMemoryWarning() {
