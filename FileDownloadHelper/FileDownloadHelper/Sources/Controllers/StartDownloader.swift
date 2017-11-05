@@ -40,21 +40,23 @@ public class StartDownloader: NSObject{ //Intiate download and save request to c
                     handler.progress!(progress)
                 }
                 
-            }, withCompleteion:{fileData in //it will trigger with full downloaded data when download completes
+            }, withCompleteion:{fileData, error in //it will trigger with full downloaded data when download completes
                 
                 //load request from cache and do the following
-                    // * Save FileData to coressponding request
-                    // * Trigger completion of all tasks
-                    // * Remove completed tasks from taskHandler
+                // * Save FileData to coressponding request
+                // * Trigger completion of all tasks
+                // * Remove completed tasks from taskHandler
                 let requestDetail:RequestDetail = CacheController().getRequestFromCache(withKey:url)!
                 requestDetail.data = fileData
-                let defaultResponse:DefaultDownloadResponse = DefaultDownloadResponse(requestUrl: requestDetail.requestUrl, data: requestDetail.data, error: nil)
+                let defaultResponse:DefaultDownloadResponse = DefaultDownloadResponse(requestUrl: requestDetail.requestUrl, data: requestDetail.data, error: error)
                 for handler in requestDetail.taskHandler!{
                     handler.completion!(defaultResponse)
                 }
                 requestDetail.taskHandler = []
-                
-                
+                if error != nil{// Delete request with all tasks if URL failed to download
+                    CacheController.sharedInstance.removeRequestFromCache(withKey: url)
+                }
+               
             })
             
         }

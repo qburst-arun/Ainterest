@@ -68,10 +68,10 @@ class HomeViewController: UIViewController {
         let downloadTask = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
         downloadTask.startDownload()
         
-//        let downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
-//        downloadTask1.startDownload()
+        let downloadTask1 = FileDownloadHelper(withUrl: url!, Progress: progress, Completion: completion)
+        downloadTask1.startDownload()
         
-//        downloadTask.cancelDownload()
+        downloadTask.cancelDownload()
         
         
     }

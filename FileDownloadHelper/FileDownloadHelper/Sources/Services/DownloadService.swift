@@ -10,7 +10,6 @@ import Foundation
 
 public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessionDelegate, URLSessionTaskDelegate{
     
-    static var config:URLSessionConfiguration?
     static var session:URLSession?
     var progressClosure:SessionTaskProgress?
     var completionClosure:SessionTaskCompletion?
@@ -20,8 +19,7 @@ public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessio
     public func download(FromURL url:URL, withProgress progress:@escaping SessionTaskProgress, withCompleteion completion:@escaping SessionTaskCompletion) {
         progressClosure = progress
         completionClosure = completion
-        DownloadService.config = URLSessionConfiguration.background(withIdentifier: "com.arunjose")
-        DownloadService.session = URLSession(configuration: DownloadService.config!, delegate: self, delegateQueue: OperationQueue.main)
+        DownloadService.session = URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "hiran"), delegate: self, delegateQueue: OperationQueue.main)
         let task = DownloadService.session?.downloadTask(with: url)
         task?.resume()
     }
@@ -51,7 +49,14 @@ public class DownloadService: FileManager, URLSessionDownloadDelegate, URLSessio
     
     public func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         if let fileData:NSData = NSData(contentsOf: location) {
-            completionClosure!((fileData as Data))
+            completionClosure!((fileData as Data), nil)
+        }
+    }
+    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        if error != nil{
+            print("Failed Download")
+            progressClosure!(1)
+            completionClosure!(nil, error)
         }
     }
     

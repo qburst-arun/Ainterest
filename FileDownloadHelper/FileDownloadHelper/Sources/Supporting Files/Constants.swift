@@ -11,13 +11,13 @@ import Foundation
 public typealias HelperTaskProgress = (Float) -> ()
 public typealias HelperTaskCompletion = (DefaultDownloadResponse) -> ()
 
-public typealias SessionTaskCompletion = (Data) -> ()
+public typealias SessionTaskCompletion = (Data?, Error?) -> ()
 public typealias SessionTaskProgress = (Float) -> ()
 
 let userInfo: [AnyHashable : Any] =
     [
-        NSLocalizedDescriptionKey :  NSLocalizedString("Cancelled", value: "Download canceled", comment: "") ,
+        NSLocalizedDescriptionKey :  NSLocalizedString("Cancelled", value: "cancelled", comment: "") ,
         NSLocalizedFailureReasonErrorKey : NSLocalizedString("Cancelled", value: "Canceled by user", comment: "")
     ]
-public let DOWNLOAD_CANCEL_ERROR = NSError(domain: "DownloadFileErrorDomain", code: 401, userInfo: userInfo) as Error
+public let DOWNLOAD_CANCEL_ERROR = NSError(domain: "NSURLErrorDomain", code: -999, userInfo: userInfo) as Error
 

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A75943E3EA6AB161EAD745C9 /* Pods_Ainterest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3265C1429B868EC7316066 /* Pods_Ainterest.framework */; };
+		CEC0007B1FAEF749005F7136 /* FileDownloadHeplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0007A1FAEF749005F7136 /* FileDownloadHeplerTests.swift */; };
+		CEC000831FAEF925005F7136 /* StartDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */; };
+		CEC000851FAEFD4B005F7136 /* CancelDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */; };
 		CEC8BDBE1FAAD9F800C5C526 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */; };
 		CEC8BDC31FAAEEB700C5C526 /* PostCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */; };
 		CEC8BDC51FAAEF5E00C5C526 /* PostCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */; };
@@ -22,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CEC0007D1FAEF749005F7136 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED6ADD61FA9A82200D36114 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CED6ADDD1FA9A82200D36114;
+			remoteInfo = Ainterest;
+		};
 		CED6ADF31FA9A82200D36114 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CED6ADD61FA9A82200D36114 /* Project object */;
@@ -40,6 +50,11 @@
 
 /* Begin PBXFileReference section */
 		6FB3C52C0CDDA98DD9287DBA /* Pods-Ainterest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ainterest.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Ainterest/Pods-Ainterest.release.xcconfig"; sourceTree = "<group>"; };
+		CEC000781FAEF748005F7136 /* FileDownloadHeplerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileDownloadHeplerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC0007A1FAEF749005F7136 /* FileDownloadHeplerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadHeplerTests.swift; sourceTree = "<group>"; };
+		CEC0007C1FAEF749005F7136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDownloaderTests.swift; sourceTree = "<group>"; };
+		CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelDownloaderTests.swift; sourceTree = "<group>"; };
 		CEC8BDBD1FAAD9F800C5C526 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEC8BDC21FAAEEB700C5C526 /* PostCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDataSource.swift; sourceTree = "<group>"; };
 		CEC8BDC41FAAEF5E00C5C526 /* PostCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +77,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CEC000751FAEF748005F7136 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CED6ADDB1FA9A82200D36114 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +126,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEC000791FAEF749005F7136 /* FileDownloadHeplerTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEC0007A1FAEF749005F7136 /* FileDownloadHeplerTests.swift */,
+				CEC0007C1FAEF749005F7136 /* Info.plist */,
+				CEC000821FAEF925005F7136 /* StartDownloaderTests.swift */,
+				CEC000841FAEFD4B005F7136 /* CancelDownloaderTests.swift */,
+			);
+			path = FileDownloadHeplerTests;
+			sourceTree = "<group>";
+		};
 		CEC8BDBA1FAAD9AB00C5C526 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +177,7 @@
 				CED6ADE01FA9A82200D36114 /* Ainterest */,
 				CED6ADF51FA9A82200D36114 /* AinterestTests */,
 				CED6AE001FA9A82200D36114 /* AinterestUITests */,
+				CEC000791FAEF749005F7136 /* FileDownloadHeplerTests */,
 				CED6ADDF1FA9A82200D36114 /* Products */,
 				1328148B83A9AF9E2DB3DFC2 /* Pods */,
 				AB4AF371EE98A1CFD4FC331C /* Frameworks */,
@@ -156,6 +190,7 @@
 				CED6ADDE1FA9A82200D36114 /* Ainterest.app */,
 				CED6ADF21FA9A82200D36114 /* AinterestTests.xctest */,
 				CED6ADFD1FA9A82200D36114 /* AinterestUITests.xctest */,
+				CEC000781FAEF748005F7136 /* FileDownloadHeplerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +231,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CEC000771FAEF748005F7136 /* FileDownloadHeplerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC0007F1FAEF749005F7136 /* Build configuration list for PBXNativeTarget "FileDownloadHeplerTests" */;
+			buildPhases = (
+				CEC000741FAEF748005F7136 /* Sources */,
+				CEC000751FAEF748005F7136 /* Frameworks */,
+				CEC000761FAEF748005F7136 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEC0007E1FAEF749005F7136 /* PBXTargetDependency */,
+			);
+			name = FileDownloadHeplerTests;
+			productName = FileDownloadHeplerTests;
+			productReference = CEC000781FAEF748005F7136 /* FileDownloadHeplerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CED6ADDD1FA9A82200D36114 /* Ainterest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CED6AE061FA9A82200D36114 /* Build configuration list for PBXNativeTarget "Ainterest" */;
@@ -262,9 +315,19 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Arun's Technologies";
 				TargetAttributes = {
+					CEC000771FAEF748005F7136 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CED6ADDD1FA9A82200D36114;
+					};
 					CED6ADDD1FA9A82200D36114 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					CED6ADF11FA9A82200D36114 = {
 						CreatedOnToolsVersion = 9.0;
@@ -294,11 +357,19 @@
 				CED6ADDD1FA9A82200D36114 /* Ainterest */,
 				CED6ADF11FA9A82200D36114 /* AinterestTests */,
 				CED6ADFC1FA9A82200D36114 /* AinterestUITests */,
+				CEC000771FAEF748005F7136 /* FileDownloadHeplerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CEC000761FAEF748005F7136 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CED6ADDC1FA9A82200D36114 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,6 +448,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CEC000741FAEF748005F7136 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEC0007B1FAEF749005F7136 /* FileDownloadHeplerTests.swift in Sources */,
+				CEC000831FAEF925005F7136 /* StartDownloaderTests.swift in Sources */,
+				CEC000851FAEFD4B005F7136 /* CancelDownloaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CED6ADDA1FA9A82200D36114 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +490,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CEC0007E1FAEF749005F7136 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CED6ADDD1FA9A82200D36114 /* Ainterest */;
+			targetProxy = CEC0007D1FAEF749005F7136 /* PBXContainerItemProxy */;
+		};
 		CED6ADF41FA9A82200D36114 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CED6ADDD1FA9A82200D36114 /* Ainterest */;
@@ -441,6 +527,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CEC000801FAEF749005F7136 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FileDownloadHeplerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arun.ainterest.FileDownloadHeplerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ainterest.app/Ainterest";
+			};
+			name = Debug;
+		};
+		CEC000811FAEF749005F7136 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FileDownloadHeplerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.arun.ainterest.FileDownloadHeplerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ainterest.app/Ainterest";
+			};
+			name = Release;
+		};
 		CED6AE041FA9A82200D36114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -647,6 +763,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CEC0007F1FAEF749005F7136 /* Build configuration list for PBXNativeTarget "FileDownloadHeplerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC000801FAEF749005F7136 /* Debug */,
+				CEC000811FAEF749005F7136 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CED6ADD91FA9A82200D36114 /* Build configuration list for PBXProject "Ainterest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

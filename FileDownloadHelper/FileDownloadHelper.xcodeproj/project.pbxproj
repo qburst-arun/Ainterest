@@ -19,6 +19,7 @@
 		CEC0002D1FADED88005F7136 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0002C1FADED88005F7136 /* Constants.swift */; };
 		CEC000311FADF05A005F7136 /* StartDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000301FADF05A005F7136 /* StartDownloader.swift */; };
 		CEC000331FADFD71005F7136 /* CancelDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000321FADFD71005F7136 /* CancelDownloader.swift */; };
+		CEC000351FAE1E70005F7136 /* StartDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC000341FAE1E70005F7136 /* StartDownloaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CEC0002C1FADED88005F7136 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEC000301FADF05A005F7136 /* StartDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartDownloader.swift; sourceTree = "<group>"; };
 		CEC000321FADFD71005F7136 /* CancelDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelDownloader.swift; sourceTree = "<group>"; };
+		CEC000341FAE1E70005F7136 /* StartDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartDownloaderTests.swift; path = ../../Ainterest/FileDownloaderHelperTests/StartDownloaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1901F41FAC27D900B64F73 /* FileDownloadHelperTests.swift */,
+				CEC000341FAE1E70005F7136 /* StartDownloaderTests.swift */,
 				CE1901F61FAC27D900B64F73 /* Info.plist */,
 			);
 			path = FileDownloadHelperTests;
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1901F51FAC27D900B64F73 /* FileDownloadHelperTests.swift in Sources */,
+				CEC000351FAE1E70005F7136 /* StartDownloaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

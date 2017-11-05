@@ -1,30 +1,31 @@
 //
-//  AinterestTests.swift
-//  AinterestTests
+//  FileDownloadHeplerTests.swift
+//  FileDownloadHeplerTests
 //
-//  Created by user on 01/11/17.
+//  Created by user on 05/11/17.
 //  Copyright © 2017 Arun's Technologies. All rights reserved.
 //
 
 import XCTest
 @testable import Ainterest
 @testable import FileDownloadHelper
-class AinterestTests: XCTestCase {
+
+class FileDownloadHeplerTests: XCTestCase {
     
     var taskId1:Int = 0
     var url1:URL?
-    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
         taskId1 = 1
         url1 = URL.init(string: "https://images.unsplash.com/photo-1464550883968-cec281c19761?ixlib=rb-0.3.5\u{0026}q=80\u{0026}fm=jpg\u{0026}crop=entropy\u{0026}s=4b142941bfd18159e2e4d166abcd0705")
+        super.tearDown()
+        
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
     }
     
     func testExample() {
@@ -38,7 +39,6 @@ class AinterestTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
     func testSingleDowloadTask() {
         let promiseProgerss = expectation(description: "progress reached")
         let promiseCompletion = expectation(description: "complletion reached")
@@ -57,5 +57,4 @@ class AinterestTests: XCTestCase {
         })
         wait(for: [promiseProgerss,promiseCompletion], timeout: 10)
     }
-    
 }

@@ -22,15 +22,11 @@ public class CancelDownloader: NSObject{ // Cancel ongoing downloads
                 let defaultResponse = DefaultDownloadResponse(requestUrl: url, data: nil, error:DOWNLOAD_CANCEL_ERROR)
                 
                 // Check URL request contain only one task
-                if requestDetail.taskHandler?.count == 1{ // If only have one task do following
+                if requestDetail.taskHandler?.count == 1{ // If only have one task
                     
                     // * Cancel download task of download service
-                    // * Trigger task handlers with error message
-                    // * Remove request from cache
                     DownloadService().cancel(WithURL: url)
-                    requestDetail.taskHandler![0].progress!(1)
-                    requestDetail.taskHandler![0].completion!(defaultResponse)
-                    CacheController().removeRequestFromCache(withKey:url)
+                    
                 }else{ // If more than one tasks for same url
                     
                     // search task to cancel from task handler and remove the task from cachce-request. Also trigger completion with error
